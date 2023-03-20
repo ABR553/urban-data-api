@@ -1,0 +1,8 @@
+Django==3.2
+psycopg2
+pymongo>=3.12.1
+fastapi>=0.70.0
+uvicorn>=0.15.0
+python-dotenv>=0.19.0
+djongo
+djangorestframework
