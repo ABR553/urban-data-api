@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djongo',
     'user',
+    'house_info'
 ]
 
 MIDDLEWARE = [
@@ -96,15 +97,17 @@ DATABASES = {
         'PORT': '5432',
     },
     'default': {
-        # 'ENGINE': 'djongo',
-        # 'NAME': 'urban-data-mongo-db',
-        # 'CLIENT': {
-        #     'host': 'mongo',
-        #     'port': 27017,
-        #     'username': 'admin',
-        #     'password': 'password',
-        #     'authSource': 'admin',
-        # }
+        'ENGINE': 'djongo',
+        'NAME': 'urban-data-mongo-db',
+        'AUTH_SOURCE': 'admin',
+        'AUTH_MECHANISM': 'SCRAM-SHA-256',
+        'CLIENT': {
+            'host': 'mongo',
+            'port': 27017,
+            'username': 'admin',
+            'password': 'password',
+            'authSource': 'admin',
+        }
     }
 }
 

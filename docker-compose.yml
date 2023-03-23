@@ -31,11 +31,12 @@ services:
 
   mongo:
     image: mongo
+    ports: 
+      - "27017:27017"
     env_file: .env
     environment:
-      - MONGO_INITDB_DATABASE=${MONGO_DB}
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
 
 volumes:
   urban-data-dev-libs:
